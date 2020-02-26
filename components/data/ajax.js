@@ -3,7 +3,7 @@ exports.get = function(url, onSuccess, onError, onTimeout, timeout) {
 	var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 	xhr.open("GET", url);
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState>3 && xhr.status==200 && onSuccess) { onSuccess(xhr.responseText); }
+		if (xhr.readyState>3 && xhr.status==200 && onSuccess) { onSuccess(xhr.response); }
 	};
 	xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 	xhr.timeout = timeout;

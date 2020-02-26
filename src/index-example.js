@@ -10,14 +10,12 @@ button1.setEvent("click", function() {
     console.log("button1 is clicked");
 	ajax.get('http://www.mocky.io/v2/5e56a6c0300000550828e951', function(data){
 	    console.log(JSON.parse(data));
-	    var bindata = "☸☹☺☻☼☾☿";
-	    var txtdata = "I am text";
-	    var b64data = base64.encode(txtdata);
+	    var b64data = base64.encode(data);
 	    console.log(b64data);
 	    console.log(base64.decode(b64data));
 	    cookie.set('mydata', b64data);
 	    cookie.set('mydata2', b64data, '/web-component/');
-	    cookie.set('mydata3', b64data, '/web-component/', 1/24/60);
+	    cookie.set('mydata3', b64data, '/web-component/', 5);
 	    var b64data_get = cookie.get('mydata');
 	    console.log(base64.decode(b64data_get));
 	    var b64data_get = cookie.get('mydata2');
